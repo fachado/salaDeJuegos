@@ -17,6 +17,7 @@ export const routes: Routes = [
     { path: 'encuesta', component: EncuestaComponent },
     { path: 'resultados', component: ResultadosComponent },
     { path: 'listado', component: ListadoResultadosComponent },
+
     
 
     { 
@@ -31,8 +32,8 @@ export const routes: Routes = [
         loadComponent: () => import('./ahorcado/ahorcado.component').then(m => m.AhorcadoComponent,), canActivate: [authGuard] 
     },
     {
-        path: 'juegos/registro',
-        loadComponent: () => import('./resgistro/resgistro.component').then(m => m.ResgistroComponent),canActivate: [authGuard] 
+        path: 'registro',
+        loadComponent: () => import('./resgistro/resgistro.component').then(m => m.ResgistroComponent),
     },
     {
         path: 'chat',

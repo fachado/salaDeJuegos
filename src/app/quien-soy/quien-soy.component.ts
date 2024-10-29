@@ -36,6 +36,6 @@ export class QuienSoyComponent implements OnInit {
   }
 
   irAMiJuego(): void {
-    this.router.navigate(["/blackjack"]);
+    this.router.navigate(["/juegos/blackjack"]);
   }
 }
