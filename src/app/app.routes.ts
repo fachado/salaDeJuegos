@@ -8,6 +8,7 @@ import { EncuestaComponent } from './encuesta/encuesta.component';
 import { ListadoResultadosComponent } from './listado-resultados/listado-resultados.component';
 import { adminGuard } from './admin.guard'; // Asegúrate de la ruta correcta
 import { RespuestasEncuestaComponent } from './respuestas-encuesta/respuestas-encuesta.component';
+import { authGuard } from './auth.guard';
 
 export const routes: Routes = [
     { path: '', component: HomeComponent },
@@ -26,30 +27,27 @@ export const routes: Routes = [
 
 
     {
-        path: 'ahorcado',
-        loadComponent: () => import('./ahorcado/ahorcado.component').then(m => m.AhorcadoComponent)
+        path: 'juegos/ahorcado',
+        loadComponent: () => import('./ahorcado/ahorcado.component').then(m => m.AhorcadoComponent,), canActivate: [authGuard] 
     },
     {
-        path: 'registro',
-        loadComponent: () => import('./resgistro/resgistro.component').then(m => m.ResgistroComponent)
+        path: 'juegos/registro',
+        loadComponent: () => import('./resgistro/resgistro.component').then(m => m.ResgistroComponent),canActivate: [authGuard] 
     },
     {
         path: 'chat',
-        loadComponent: () => import('./chat/chat.component').then(m => m.ChatComponent)
+        loadComponent: () => import('./chat/chat.component').then(m => m.ChatComponent),canActivate: [authGuard] 
     },
     {
-        path: 'mayorMenor',
-        loadComponent: () => import('./mayor-menor/mayor-menor.component').then(m => m.MayorMenorComponent)
+        path: 'juegos/mayorMenor',
+        loadComponent: () => import('./mayor-menor/mayor-menor.component').then(m => m.MayorMenorComponent),canActivate: [authGuard] 
     },
     {
-        path: 'preguntados',
-        loadComponent: () => import('./flag-quiz/flag-quiz.component').then(m => m.FlagQuizComponent)
-    },    {
-        path: 'aimLab',
-        loadComponent: () => import('./aim-lab/aim-lab.component').then(m => m.AimLabComponent)
-    }, 
+        path: 'juegos/preguntados',
+        loadComponent: () => import('./flag-quiz/flag-quiz.component').then(m => m.FlagQuizComponent),canActivate: [authGuard] 
+    },  
     {
-        path: 'blackjack',
-        loadComponent: () => import('./black-jack/black-jack.component').then(m => m.BlackjackComponent)
+        path: 'juegos/blackjack',
+        loadComponent: () => import('./black-jack/black-jack.component').then(m => m.BlackjackComponent),canActivate: [authGuard] 
     },
 ];

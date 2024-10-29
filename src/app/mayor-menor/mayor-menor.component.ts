@@ -6,8 +6,7 @@ import { HttpClientModule } from '@angular/common/http';
 import Swal from 'sweetalert2';
 import { ResultadosService } from '../resultados.service';
 import { UserService } from '../user.service';
-import { Auth } from '@angular/fire/auth';
-import { Router } from '@angular/router';
+
 @Component({
   selector: 'app-mayor-menor',
   standalone: true,
@@ -21,24 +20,15 @@ export class MayorMenorComponent implements OnInit {
   previousCardValue: number = 0;
   score: number = 0;
   message: string = '';
-  user: any = null;
 
   constructor(
     private cardsService: CardsService,
     private resultadosService: ResultadosService,
     private userService: UserService,
-    private router: Router,
-    private auth: Auth,
   ) {}
 
   ngOnInit(): void {
-    this.auth.onAuthStateChanged((user) => {
-      if (user) {
-        this.user = user;
-      } else {
-        this.router.navigate(['/login']);
-      }
-    });
+
     this.startGame();
   }
 

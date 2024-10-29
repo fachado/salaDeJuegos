@@ -2,8 +2,7 @@ import { CommonModule } from '@angular/common';
 import { Component } from '@angular/core';
 import { HomeComponent } from "../home/home.component";
 import { LayoutComponent } from '../layout/layout.component';
-import { Auth } from '@angular/fire/auth';
-import { Router } from '@angular/router';
+
 import Swal from 'sweetalert2';
 import { UserService } from '../user.service';
 import { ResultadosService } from '../resultados.service';
@@ -25,18 +24,10 @@ export class AhorcadoComponent {
   letrasUsadas: string[] = [];
   mensaje = '';
   score = 0; // Inicializa tu puntuación
-  user: any = null;
 
 
-  constructor(private resultadosService: ResultadosService, private userService: UserService,    private router: Router,
-    private auth: Auth,) {
-      this.auth.onAuthStateChanged((user) => {
-        if (user) {
-          this.user = user;
-        } else {
-          this.router.navigate(['/login']);
-        }
-      });
+  constructor(private resultadosService: ResultadosService, private userService: UserService,  )
+{
     this.inicializarJuego();
     
   }

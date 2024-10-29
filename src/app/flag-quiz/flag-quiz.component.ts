@@ -6,7 +6,6 @@ import { FormsModule } from '@angular/forms';
 import { Router } from '@angular/router';
 import { UserService } from '../user.service';
 import { ResultadosService } from '../resultados.service';
-import { Auth } from '@angular/fire/auth';
 @Component({
   selector: 'app-flag-quiz',
   standalone: true,
@@ -35,20 +34,13 @@ export class FlagQuizComponent implements OnInit {
     private apiPaises: FlagQuizService,
     private resultadosService: ResultadosService, // Inyectar el servicio de resultados
     private userService: UserService, // Inyectar el servicio de usuario
-    private auth: Auth
 
   ) {
     this.loadCountries();
   }
 
   async ngOnInit(): Promise<void> {
-    this.auth.onAuthStateChanged((user) => {
-      if (user) {
-        this.user = user;
-      } else {
-        this.router.navigate(['/login']);
-      }
-    });
+
     await this.loadCountries();
     this.startGame();
   }
