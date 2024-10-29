@@ -1,0 +1,22 @@
+
+<body>
+  <h2 class="page-title">Chat en Vivo</h2> <!-- Título en la parte superior de la página -->
+  
+<div class="chat-container">
+  <div id="contenedor-mensajes" class="messages">
+    <div *ngFor="let message of messageList" 
+         [ngClass]="{'my-message': message.user === user?.email, 'other-message': message.user !== user?.email}">
+      <strong>{{ message.user }}</strong>: {{ message.text }}
+      <span class="timestamp">{{ message.date }}</span>
+    </div>
+  </div>
+
+  <div class="message-input">
+    <input [(ngModel)]="newMessage" placeholder="Escribe un mensaje" />
+    <button (click)="sendMessage()">
+      <fa-icon [icon]="sendIcon"></fa-icon>
+    </button>
+  </div>
+</div>
+
+</body>

@@ -1,0 +1,74 @@
+.blackjack-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  color: #e0e0ff;
+  background: #2e0352;
+  padding: 2rem;
+  border-radius: 15px;
+  box-shadow: 0 0 20px rgba(0, 0, 255, 0.5);
+
+  h1 {
+    font-size: 2.5rem;
+    color: #b0a8f0;
+    text-shadow: 0px 0px 10px #6c6cff;
+  }
+
+  .score-board {
+    font-size: 1.5rem;
+    margin-bottom: 1rem;
+  }
+
+  .cards-container {
+    display: flex;
+    justify-content: space-around;
+    width: 100%;
+    margin: 1.5rem 0;
+
+    .player, .dealer {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+
+      h2 {
+        font-size: 1.8rem;
+        color: #8c72ef;
+      }
+
+      .card {
+        margin: 0.3rem;
+        img {
+          width: 100px;
+          height: auto;
+          border-radius: 5px;
+          transition: transform 0.3s ease;
+          box-shadow: 0 0 10px #00f7ff;
+        }
+
+        img:hover {
+          transform: scale(1.05);
+        }
+      }
+    }
+  }
+
+  .controls {
+    display: flex;
+    gap: 1rem;
+
+    button {
+      background: #5e40f0;
+      color: #fff;
+      border: none;
+      padding: 0.8rem 1.5rem;
+      font-size: 1.2rem;
+      border-radius: 5px;
+      cursor: pointer;
+      transition: background 0.3s;
+
+      &:hover {
+        background: #9b80ff;
+      }
+    }
+  }
+}

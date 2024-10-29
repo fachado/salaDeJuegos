@@ -1,0 +1,69 @@
+body, html {
+  margin: 0;
+  padding: 0;
+  height: 100%;
+  width: 100%;
+}
+
+.game-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  height: 100vh; // Usa toda la altura de la ventana
+  background: linear-gradient(to bottom right, #6a0dad, #250c4e); // Gradiente de colores violeta y azul
+  color: white;
+  font-family: 'Arial', sans-serif;
+  text-align: center;
+  overflow: hidden; // Evita el scroll si hay contenido adicional
+}
+
+h2 {
+  margin-bottom: 20px;
+}
+
+.game-content {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative; // Para posicionar la carta animada
+}
+
+.deck-container {
+  margin-right: 20px; // Espacio entre la baraja y la carta actual
+}
+
+.deck-image {
+  width: 150px; // Ajusta según sea necesario
+}
+
+.current-card-container {
+  transition: transform 0.5s ease-in-out; // Transición para la animación de la carta
+  transform: translateY(0); // Posición inicial
+
+  &.card-animate {
+    transform: translateY(-50px); // Ajusta la animación como desees
+  }
+}
+
+.current-card {
+  width: 150px; // Ajusta según sea necesario
+}
+
+.buttons {
+  margin-top: 20px;
+
+  button {
+    background-color: rgba(255, 255, 255, 0.1); // Color de fondo semi-transparente
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    margin: 0 10px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+
+    &:hover {
+      background-color: rgba(255, 255, 255, 0.2);
+    }
+  }
+}

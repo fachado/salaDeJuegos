@@ -1,0 +1,99 @@
+// Colores principales y efectos
+$primary-color: #6a0dad;
+$secondary-color: #1e90ff;
+$background-color: #1b1b2f;
+$text-color: #ffffff;
+$neon-border-color: #0ff;
+$neon-glow: rgba(0, 255, 255, 0.5);
+
+.resultados-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 20px;
+  background-color: $background-color;
+  color: $text-color;
+  font-family: 'Arial', sans-serif;
+  min-height: 100vh;
+
+  h2 {
+    font-size: 2rem;
+    margin-bottom: 20px;
+    color: $text-color;
+    text-shadow: 0 0 5px $primary-color, 0 0 10px $primary-color, 0 0 15px $neon-border-color;
+  }
+
+  // Contenedor de botones alineados horizontalmente
+  .botones-juegos {
+    display: flex;
+    justify-content: center;
+    gap: 10px;
+    margin-bottom: 20px;
+
+    .boton-juego {
+      background: linear-gradient(135deg, $primary-color, $secondary-color);
+      color: $text-color;
+      padding: 12px 20px;
+      border: none;
+      border-radius: 8px;
+      cursor: pointer;
+      font-size: 1rem;
+      font-weight: bold;
+      text-transform: uppercase;
+      transition: transform 0.2s, box-shadow 0.3s;
+      box-shadow: 0 0 10px $neon-glow;
+
+      &:hover {
+        transform: scale(1.1);
+        box-shadow: 0 0 20px $neon-glow, 0 0 40px $neon-glow;
+      }
+    }
+  }
+
+  // Tabla de resultados centrada y estilizada
+  .tabla-resultados {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+
+    table {
+      width: 80%;
+      max-width: 900px;
+      background-color: rgba(255, 255, 255, 0.05);
+      border-collapse: collapse;
+      border: 2px solid $neon-border-color;
+      box-shadow: 0 0 15px $neon-glow;
+      text-align: center;
+
+      thead {
+        background-color: $primary-color;
+        color: $text-color;
+
+        th {
+          padding: 15px 20px;
+          font-size: 1.1rem;
+          text-shadow: 0 0 5px $neon-border-color;
+        }
+      }
+
+      tbody {
+        tr {
+          &:hover {
+            background-color: rgba(255, 255, 255, 0.1);
+          }
+
+          td {
+            padding: 10px 15px;
+            background-color: rgba(255, 255, 255, 0.1);
+            color: $text-color;
+            border-bottom: 1px solid rgba(255, 255, 255, 0.15);
+
+            &:last-child {
+              border-bottom: none;
+            }
+          }
+        }
+      }
+    }
+  }
+}

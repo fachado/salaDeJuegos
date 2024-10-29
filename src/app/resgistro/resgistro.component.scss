@@ -1,0 +1,88 @@
+/* resgistro.component.scss */
+body {
+  background: linear-gradient(145deg, #1c1e3b, #282a48); /* Fondo degradado */
+  color: #e0e0ff;
+  font-family: Arial, sans-serif;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  min-height: 100vh;
+}
+
+.page-title {
+  color: #ffffff;
+  margin: 20px 0;
+  font-size: 2rem;
+  text-align: center;
+}
+
+.container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 100%;
+  max-width: 400px;
+  padding: 20px;
+  background: rgba(255, 255, 255, 0.05);
+  border-radius: 8px;
+  box-shadow: 0px 4px 15px rgba(0, 0, 0, 0.4);
+}
+
+.form-group {
+  width: 100%;
+  margin-bottom: 15px;
+}
+
+label {
+  color: #e0e0ff;
+  display: block;
+  margin-bottom: 5px;
+}
+
+input {
+  width: 100%;
+  padding: 10px;
+  border: none;
+  border-radius: 5px;
+  background-color: rgba(255, 255, 255, 0.1);
+  color: #e0e0ff;
+  outline: none;
+  transition: border 0.3s;
+}
+
+input:focus {
+  border: 2px solid #00ffcc; /* Neon effect */
+}
+
+.register-button {
+  width: 100%;
+  padding: 10px;
+  background-color: #5a4fcf; /* Color de fondo */
+  color: #ffffff; /* Color del texto */
+  border: none;
+  border-radius: 5px;
+  font-size: 16px;
+  cursor: pointer;
+  transition: background-color 0.3s, transform 0.3s;
+}
+
+.register-button:hover {
+  background-color: #00ffcc; /* Color al pasar el mouse */
+  transform: scale(1.05); /* Aumentar un poco el tamaño */
+}
+
+.login-prompt {
+  margin-top: 15px;
+  color: #ffffff;
+}
+
+.login-link {
+  color: #00ffcc;
+  text-decoration: none;
+}
+
+.login-link:hover {
+  text-decoration: underline;
+}

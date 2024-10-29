@@ -1,0 +1,28 @@
+<div class="blackjack-container">
+  <h1>Blackjack</h1>
+  <div class="score-board">
+    <p>Tu Puntuación: {{ playerScore }}</p>
+    <p>Puntuación del Dealer: {{ dealerScore }}</p>
+  </div>
+
+  <div class="cards-container">
+    <div class="player">
+      <h2>Jugador</h2>
+      <div class="card" *ngFor="let card of playerCards">
+        <img [src]="card.image" [alt]="card.code" />
+      </div>
+    </div>
+    <div class="dealer">
+      <h2>Dealer</h2>
+      <div class="card" *ngFor="let card of dealerCards">
+        <img [src]="card.image" [alt]="card.code" />
+      </div>
+    </div>
+  </div>
+
+  <div class="controls">
+    <button (click)="drawPlayerCard()" [disabled]="gameStatus !== 'En curso'">Pedir Carta</button>
+    <button (click)="stand()" [disabled]="gameStatus !== 'En curso'">Plantarse</button>
+    <button (click)="startGame()">Volver a Jugar</button>
+  </div>
+</div>

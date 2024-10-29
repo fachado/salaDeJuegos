@@ -1,15 +1,41 @@
-<div class="quien-soy-container">
-    <h1>¿Quién Soy?</h1>
-  
-    <div class="info-personal">
-      <img src="/Labo_IV/src/assets/img/yo.jpeg" alt="Foto del alumno" class="profile-image" />
-      <p><strong>Nombre:</strong> Ignacio Fachado</p>
-      <p><strong>Estudiante de:</strong> Programación en la UTN</p>
-      <p><strong>Próximo a graduarme:</strong> 2024</p>
-    </div>
-  
-    <div class="game-explanation">
-      <h2>Mi Juego</h2>
-      <p>Estuve pensando en crear un blackjack 21 con un sistema de puntos de perdida y ganancia a medida que le ganas a la banca o no.</p>
+<div class="home-container">
+  <div class="wrapper fadeInDown">
+    <div class="row" id="formContent">
+      <div class="col col-img">
+      </div>
+      <div class="col">
+        <div class="welcome">
+          <h3>{{ myProfile.name }}</h3>
+          <h3>División: °A341 Noche</h3>
+          <h2 style="padding-top: 2rem;">Juego de Blackjack</h2>
+          <p>
+            El objetivo del juego es acercarse lo más posible a 21 puntos sin pasarse.
+            Los jugadores compiten contra el crupier y no entre sí. A continuación,
+            se presentan las reglas básicas del juego:
+          </p>
+          <ul style="text-align: left;">
+            <li>
+              Cada jugador recibe dos cartas, mientras que el crupier recibe una carta visible y otra oculta.
+            </li>
+            <li>
+              Las cartas del 2 al 10 tienen su valor nominal, las figuras (J, Q, K) valen 10 puntos y el As puede valer 1 o 11 puntos, según lo que beneficie más al jugador.
+            </li>
+            <li>
+              Los jugadores pueden "pedir" más cartas para aumentar su total, o "plantarse" si están satisfechos.
+            </li>
+            <li>
+              Si el total de las cartas de un jugador supera 21, pierde automáticamente (se dice que se "quema").
+            </li>
+            <li>
+              Si un jugador alcanza exactamente 21 con las primeras dos cartas, se llama "Blackjack" y generalmente gana automáticamente, a menos que el crupier también lo tenga.
+            </li>
+            <li>
+              <a href="https://es.wikipedia.org/wiki/Blackjack" target="_blank">Más Información</a>
+            </li>
+          </ul>
+          <button (click)="irAMiJuego()">JUGAR</button>
+        </div>
+      </div>
     </div>
   </div>
+</div>

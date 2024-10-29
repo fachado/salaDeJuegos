@@ -1,0 +1,36 @@
+<!-- listado-resultados.component.html -->
+<div class="resultados-container">
+    <h2>Resultados de Juegos</h2>
+
+    <!-- Contenedor para los botones de selección de juego -->
+    <div class="botones-juegos">
+        <button class="boton-juego" (click)="seleccionarJuego('Ahorcado')">Ahorcado</button>
+        <button class="boton-juego" (click)="seleccionarJuego('Mayor-Menor')">Mayor Menor</button>
+        <button class="boton-juego" (click)="seleccionarJuego('preguntados')">Preguntados</button>
+        <button class="boton-juego" (click)="seleccionarJuego('Blackjack')">BlackJack</button>
+    </div>
+
+    <!-- Tabla de resultados filtrada -->
+    <div class="tabla-resultados">
+        <table *ngIf="resultados$ | async as resultados">
+            <thead>
+                <tr>
+                    <th>Usuario</th>
+                    <th>Juego</th>
+                    <th>Fecha</th>
+                    <th>Puntaje Total</th>
+                    <th>Cantidad de Juegos</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr *ngFor="let resultado of resultados">
+                    <td>{{ resultado.usuarioId }}</td>
+                    <td>{{ resultado.juego }}</td>
+                    <td>{{ resultado.fecha.toDate() | date: 'short' }}</td>
+                    <td>{{ resultado.puntajeTotal }}</td> <!-- Actualizado a puntajeTotal -->
+                    <td>{{ resultado.jugados }}</td> <!-- Cantidad de veces que jugó -->
+                </tr>
+            </tbody>
+        </table>
+    </div>
+</div>

@@ -1,0 +1,268 @@
+/* Estilos del header */
+
+* {
+  margin: 0%;
+}
+
+.header1 {
+  background: rgba(0, 0, 0, 0.85); /* Fondo traslúcido con color morado */
+  color: white;
+  font-family: 'Poppins', sans-serif;
+  font-size: 1rem;
+  position: relative;
+  z-index: 1000;
+  overflow: hidden;
+  padding: 15px 30px; /* Ajustar padding */
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.header1 img {
+  height: 40px; /* Ajusta el tamaño del logo */
+  width: auto;
+  margin-right: 20px; /* Espacio entre la imagen y el resto del contenido */
+}
+
+/* Animación de fondo en el header */
+.header1::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(135deg, rgba(0, 119, 255, 0.712), rgba(0, 204, 255, 0.863), rgba(255, 0, 150, 0.4));
+  background-size: 400% 400%;
+  animation: gradientAnimation 4s ease infinite;
+  z-index: -1;
+  opacity: 0.6;
+}
+
+@keyframes gradientAnimation {
+  0% { background-position: 0% 50%; }
+  50% { background-position: 100% 50%; }
+  100% { background-position: 0% 50%; }
+}
+
+/* Sombra sutil en el texto del header */
+.header1 h1 {
+  flex-grow: 1;
+  text-align: left;
+  margin: 0;
+  text-shadow: 2px 4px 10px rgba(0, 0, 0, 0.3);
+  font-size: 2rem;
+  margin-left: 50px;
+}
+
+/* Efecto de desvanecimiento cuando el mouse pasa por encima del header */
+.header1:hover {
+  background-color: rgba(0, 0, 0, 0.95);
+  transition: background-color 0.5s ease;
+}
+
+/* Sombra suave en el header para darle profundidad */
+.header1 {
+  box-shadow: 0px 4px 15px rgba(0, 0, 0, 0.3);
+}
+
+/* Estilos de la barra de navegación */
+.navbar {
+  display: flex;
+  align-items: center;
+}
+
+.navbar-container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+}
+
+/* Lista de navegación centrada */
+.nav-list {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  justify-content: flex-start;
+  flex-grow: 1;
+}
+
+.nav-list li {
+  padding: 0 20px;
+}
+
+/* Estilo de los enlaces de navegación */
+.nav-list li a {
+  color: white;
+  text-decoration: dashed;
+  padding: 10px 15px;
+  text-shadow: 2px 4px 10px rgba(0, 0, 0, 0.904);
+  display: inline-block; /* Necesario para hacer el elemento circular */
+  padding: 19px; /* Ajusta según el tamaño que prefieras */
+  border-radius: 50%; /* Esto le da la forma circular */
+  transition: background-color 0.5s ease, transform 0.3s ease; /* Transiciones suaves */
+  transition: transform 0.7s ease;
+  font-size: small;
+}
+
+.nav-list li a:hover {
+  transform: scale(1.2); /* Pequeño aumento de tamaño para el hover */
+  box-shadow: 0 0 15px rgba(245, 243, 243, 0.2); /* Sombras para darle más estilo */
+}
+
+.navbar-user-info {
+  display: flex;
+  align-items: center;
+  text-shadow: 2px 4px 10px rgba(0, 0, 0, 0.3);
+  margin-left: 30px;
+}
+
+.navbar-user-info span {
+  margin-right: 15px;
+}
+
+/* Estilos del botón de logout */
+.logout-btn {
+  color: white;
+  font-size: 1.5em;
+  padding: 10px;
+  cursor: pointer;
+}
+
+/* Estilos de la lista de login/register */
+.auth-list {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+}
+
+.auth-list li {
+  padding: 0 15px;
+}
+
+.auth-list li a {
+  color: white;
+  text-decoration: dashed;
+  padding: 10px 15px;
+  text-shadow: 2px 4px 10px rgba(0, 0, 0, 0.904);
+  display: inline-block; /* Necesario para hacer el elemento circular */
+  padding: 19px; /* Ajusta según el tamaño que prefieras */
+  border-radius: 50%; /* Esto le da la forma circular */
+  transition: background-color 0.5s ease, transform 0.3s ease; /* Transiciones suaves */
+  transition: transform 0.7s ease;
+}
+
+.auth-list li a:hover {
+  transform: scale(1.2); /* Pequeño aumento de tamaño para el hover */
+  box-shadow: 0 0 15px rgba(255, 255, 255, 0.2); /* Sombras para darle más estilo */
+}
+
+/* Estilos de las secciones */
+section {
+  padding: 20px;
+  margin: 10px;
+}
+
+.home-container {
+  text-align: center;
+  margin: 50px;
+
+  .title {
+    font-size: 3rem;
+    margin-bottom: 40px;
+    color: #333;
+  }
+
+  .menu-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 30px;
+    justify-content: center;
+  }
+
+  .menu-item {
+    background-color: #f0f0f0;
+    border-radius: 10px;
+    padding: 20px;
+    cursor: pointer;
+    transition: transform 0.3s, background-color 0.3s;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    text-align: center;
+
+    &:hover {
+      background-color: #e0e0e0;
+      transform: translateY(-5px);
+    }
+
+    img {
+      width: 100px;
+      height: 100px;
+      margin-bottom: 15px;
+    }
+
+    h2 {
+      font-size: 1.5rem;
+      color: #555;
+    }
+  }
+}
+
+/* Media Queries para hacer el header responsive */
+@media (max-width: 768px) {
+  .header1 {
+    flex-direction: column;
+    padding: 10px 20px;
+  }
+
+  .header1 h1 {
+    margin-left: 0;
+    font-size: 1.5rem;
+    text-align: center;
+    margin-bottom: 10px;
+  }
+
+  .nav-list {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .nav-list li {
+    padding: 10px 0;
+  }
+
+  .navbar-user-info {
+    margin-left: 0;
+    justify-content: center;
+    margin-bottom: 10px;
+  }
+
+  .auth-list {
+    flex-direction: column;
+  }
+
+  .auth-list li {
+    padding: 10px 0;
+  }
+}
+
+@media (max-width: 480px) {
+  .header1 {
+    padding: 5px 10px;
+  }
+
+  .header1 h1 {
+    font-size: 1.25rem;
+  }
+
+  .nav-list li a {
+    padding: 10px;
+    font-size: smaller;
+  }
+
+  .navbar-user-info span {
+    font-size: smaller;
+  }
+}

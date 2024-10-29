@@ -3,7 +3,7 @@
   "version": 1,
   "newProjectRoot": "projects",
   "projects": {
-    "Labo_IV": {
+    "laboiv": {
       "projectType": "application",
       "schematics": {
         "@schematics/angular:component": {
@@ -29,6 +29,7 @@
               {
                 "glob": "**/*",
                 "input": "public"
+                
               }
             ],
             "styles": [
@@ -64,10 +65,10 @@
           "builder": "@angular-devkit/build-angular:dev-server",
           "configurations": {
             "production": {
-              "buildTarget": "Labo_IV:build:production"
+              "buildTarget": "laboiv:build:production"
             },
             "development": {
-              "buildTarget": "Labo_IV:build:development"
+              "buildTarget": "laboiv:build:development"
             }
           },
           "defaultConfiguration": "development"

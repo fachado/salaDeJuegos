@@ -1,0 +1,79 @@
+<!-- encuesta.component.html -->
+
+<div class="encuesta-container">
+  <h3>Encuesta general</h3>
+
+  <form [formGroup]="encuestaForm" (ngSubmit)="onSubmit()">
+    <!-- Datos personales -->
+    <div class="encuesta-seccion">
+      <label>Nombre y Apellido:</label>
+      <input class="encuesta-input" formControlName="nombre" required />
+      <div *ngIf="encuestaForm.get('nombre')?.invalid && (encuestaForm.get('nombre')?.dirty || encuestaForm.get('nombre')?.touched)" class="error-msg">
+        Este campo es obligatorio.
+      </div>
+    </div>
+
+    <div class="encuesta-seccion">
+      <label>Edad:</label>
+      <input class="encuesta-input" formControlName="edad" type="number" required />
+      <div *ngIf="encuestaForm.get('edad')?.hasError('min') && (encuestaForm.get('edad')?.dirty || encuestaForm.get('edad')?.touched)" class="error-msg">
+        Debes ser mayor de 18 años.
+      </div>
+      <div *ngIf="encuestaForm.get('edad')?.hasError('max') && (encuestaForm.get('edad')?.dirty || encuestaForm.get('edad')?.touched)" class="error-msg">
+        Debes ser menor de 99 años.
+      </div>
+    </div>
+
+    <div class="encuesta-seccion">
+      <label>Número de Teléfono:</label>
+      <input class="encuesta-input" formControlName="telefono" required />
+      <div *ngIf="encuestaForm.get('telefono')?.hasError('pattern') && (encuestaForm.get('telefono')?.dirty || encuestaForm.get('telefono')?.touched)" class="error-msg">
+        El teléfono debe ser solo números y tener 10 caracteres.
+      </div>
+      <div *ngIf="encuestaForm.get('telefono')?.invalid && (encuestaForm.get('telefono')?.dirty || encuestaForm.get('telefono')?.touched)" class="error-msg">
+        Este campo es obligatorio.
+      </div>
+    </div>
+
+    <!-- Preguntas -->
+    
+    <!-- Pregunta 1: Textbox -->
+    <div class="encuesta-seccion">
+      <label>¿Cuál es tu juego favorito?</label>
+      <input class="encuesta-input" formControlName="respuesta1" required />
+      <div *ngIf="encuestaForm.get('respuesta1')?.invalid && (encuestaForm.get('respuesta1')?.dirty || encuestaForm.get('respuesta1')?.touched)" class="error-msg">
+        Este campo es obligatorio.
+      </div>
+    </div>
+
+    <!-- Pregunta 2: Radio Buttons -->
+    <div class="encuesta-seccion">
+      <label>¿Te gustan los juegos de estrategia?</label>
+      <div>
+        <input type="radio" formControlName="respuesta2" value="Sí" required /> Sí
+        <input type="radio" formControlName="respuesta2" value="No" required /> No
+      </div>
+      <div *ngIf="encuestaForm.get('respuesta2')?.invalid && (encuestaForm.get('respuesta2')?.dirty || encuestaForm.get('respuesta2')?.touched)" class="error-msg">
+        Debes seleccionar una opción.
+      </div>
+    </div>
+
+    <!-- Pregunta 3: Checkbox -->
+    <div class="encuesta-seccion">
+      <label>¿Qué tipo de juegos prefieres? (Selecciona los que apliquen)</label>
+      <div>
+        <input type="checkbox" formControlName="accion" /> Acción
+        <input type="checkbox" formControlName="aventura" /> Aventura
+        <input type="checkbox" formControlName="estrategia" /> Estrategia
+      </div>
+    </div>
+
+    <!-- Botón de envío -->
+    <button class="encuesta-boton" type="submit" [disabled]="encuestaForm.invalid">Enviar Encuesta</button>
+    
+    <!-- Mensaje de error general -->
+    <div *ngIf="encuestaForm.invalid && (encuestaForm.dirty || encuestaForm.touched)" class="error-msg">
+      <p>Por favor completa todos los campos requeridos.</p>
+    </div>
+  </form>
+</div>

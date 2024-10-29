@@ -1,0 +1,34 @@
+<!-- respuestas-encuesta.component.html -->
+
+<div class="respuestas-container">
+    <h3>Respuestas de la Encuesta</h3>
+  
+    <table>
+      <thead>
+        <tr>
+          <th>Nombre</th>
+          <th>Edad</th>
+          <th>Teléfono</th>
+          <th>Juego Favorito</th>
+          <th>¿Juegos de Estrategia?</th>
+          <th>Tipo de Juegos Preferidos</th>
+          <th>Fecha</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let encuesta of encuestas$ | async">
+          <td>{{ encuesta.nombre }}</td>
+          <td>{{ encuesta.edad }}</td>
+          <td>{{ encuesta.telefono }}</td>
+          <td>{{ encuesta.respuesta1 }}</td>
+          <td>{{ encuesta.respuesta2 }}</td>
+          <td>
+            <span *ngIf="encuesta.accion">Acción </span>
+            <span *ngIf="encuesta.aventura">Aventura </span>
+            <span *ngIf="encuesta.estrategia">Estrategia</span>
+          </td>
+          <td>{{ encuesta.fecha.toDate() | date }}</td>
+        </tr>
+      </tbody>
+    </table>
+  </div>

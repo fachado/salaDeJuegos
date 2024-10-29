@@ -1,0 +1,16 @@
+<div class="game-container">
+    <h1>Puntuación: {{ score }}</h1>
+    <h2>Tiempo restante: {{ time }}s</h2>
+    <div class="circles-container">
+      <div
+        *ngFor="let circle of circles"
+        class="circle"
+        [ngStyle]="{'top.px': circle.top, 'left.px': circle.left}"
+        (click)="shoot(circle.id)"
+      ></div>
+      <div
+        class="cursor"
+        [ngStyle]="{'top.px': cursorPosition.y, 'left.px': cursorPosition.x}"
+      ></div>
+    </div>
+  </div>

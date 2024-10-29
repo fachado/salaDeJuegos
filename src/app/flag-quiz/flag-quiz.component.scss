@@ -1,0 +1,112 @@
+/* Fondo de pantalla completo */
+:host {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    width: 100%;
+    background-image: url('https://firebasestorage.googleapis.com/v0/b/fbst-8c19a.appspot.com/o/Pfondo.avif?alt=media&token=3ea685e8-7581-41f9-ba0b-e0206ef9f28c');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    overflow: hidden;
+  }
+.quiz-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    font-family: 'Arial', sans-serif;
+    color: #e0e0ff;
+    
+  
+    h2 {
+      font-size: 2rem;
+      color: #a29bfe;
+      text-shadow: 0 0 8px #a29bfe, 0 0 16px #6c5ce7;
+    }
+  
+    .flag-image {
+      width: 200px;
+      height: auto;
+      margin-bottom: 20px;
+      border: 2px solid #6c5ce7;
+      border-radius: 8px;
+      box-shadow: 0 0 12px #6c5ce7, 0 0 24px #a29bfe;
+    }
+  
+    .options {
+      display: grid;
+      grid-template-columns: repeat(2, minmax(120px, 1fr));
+      gap: 15px;
+      margin-top: 20px;
+      width: 100%;
+      max-width: 400px;
+  
+      button {
+        padding: 12px 20px;
+        font-size: 1rem;
+        color: #ffffff;
+        background-color: #6c5ce7;
+        border: 2px solid #6c5ce7;
+        border-radius: 10px;
+        cursor: pointer;
+        transition: all 0.3s ease;
+        box-shadow: 0 0 10px #6c5ce7, 0 0 20px #a29bfe, 0 0 30px #6c5ce7;
+        outline: none;
+  
+        &:hover {
+          color: #dfe6e9;
+          background-color: #a29bfe;
+          box-shadow: 0 0 15px #9c88ff, 0 0 25px #b2a0ff, 0 0 35px #8c7ae6;
+          transform: scale(1.05);
+        }
+  
+        &:active {
+          transform: scale(0.98);
+          box-shadow: 0 0 8px #6c5ce7;
+        }
+  
+        &:disabled {
+          background-color: #444;
+          color: #888;
+          cursor: not-allowed;
+          box-shadow: none;
+        }
+      }
+    }
+  
+    .game-over {
+      font-size: 1.8rem;
+      color: #ff7675;
+      text-shadow: 0 0 10px #ff7675, 0 0 20px #d63031;
+      margin-top: 20px;
+    }
+  
+    .restart-button {
+      margin-top: 20px;
+      padding: 12px 24px;
+      font-size: 1rem;
+      color: #ffffff;
+      background-color: #6c5ce7;
+      border: 2px solid #6c5ce7;
+      border-radius: 10px;
+      cursor: pointer;
+      transition: all 0.3s ease;
+      box-shadow: 0 0 10px #6c5ce7, 0 0 20px #a29bfe, 0 0 30px #6c5ce7;
+      outline: none;
+  
+      &:hover {
+        color: #dfe6e9;
+        background-color: #a29bfe;
+        box-shadow: 0 0 15px #9c88ff, 0 0 25px #b2a0ff, 0 0 35px #8c7ae6;
+        transform: scale(1.05);
+      }
+  
+      &:active {
+        transform: scale(0.98);
+        box-shadow: 0 0 8px #6c5ce7;
+      }
+    }
+  }

@@ -1,0 +1,127 @@
+/* Estilos generales */
+:host {
+  display: block;
+  position: relative; /* Posicionamiento relativo para el fondo estrellado */
+  margin: 0; /* Quitar márgenes */
+  overflow: hidden; /* Evitar barras de desplazamiento */
+  background-color: #1a1a2e; /* Color de fondo */
+}
+
+
+/* Estilos del contenedor */
+.container {
+  font-family: 'Arial', sans-serif;
+
+  color: #fff;
+  max-width: 1600px; 
+  height: 100%;/* Mantener el ancho máximo para el contenedor */
+  margin: auto;
+  padding: 20px;
+  border: 2px solid rgba(255, 255, 255, 0.3);
+  border-radius: 8px;
+  background-color: rgba(25, 25, 50, 0.9); /* Fondo con transparencia para ver las estrellas */
+  box-shadow: 0px 4px 20px rgba(0, 0, 0, 0.5);
+  display: flex; /* Usar flexbox para centrar elementos */
+  flex-direction: column; /* Disposición en columna */
+  align-items: center; /* Centrar horizontalmente */
+
+}
+
+/* Animación de entrada */
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+/* Canvas del Ahorcado */
+canvas#canvasAhorcado {
+  width: 400px; /* Mantener el ancho deseado */
+  height: 400px; /* Mantener la altura deseada */
+  border: 2px solid #00adb5; /* Borde de color neón */
+  border-radius: 8px;
+  background-color: #fff;
+  margin-bottom: 20px; /* Espacio entre el canvas y el teclado */
+  box-shadow: 0px 0px 20px rgba(0, 173, 181, 0.8);
+}
+
+/* Palabra a adivinar */
+.word {
+  font-size: 1.5em;
+  font-weight: bold;
+  letter-spacing: 8px;
+  margin: 15px 0;
+  text-shadow: 0 0 5px rgba(0, 173, 181, 0.8); /* Sombra de texto */
+}
+
+/* Intentos restantes */
+p {
+  font-size: 1em;
+  color: #bbb;
+  margin: 10px 0;
+}
+
+/* Teclado */
+.keyboard {
+  display: grid;
+  grid-template-columns: repeat(7, 1fr);
+  gap: 10px;
+  width: 100%; /* Hacer que el teclado ocupe el ancho completo */
+  margin: 15px 0;
+}
+
+.keyboard button {
+  padding: 10px;
+  font-size: 1em;
+  font-weight: bold;
+  color: #fff;
+  background-color: #0f3460; /* Color de fondo oscuro */
+  border: 2px solid #00adb5; /* Borde de color neón */
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.2s, transform 0.1s, box-shadow 0.2s; /* Añadir transición para efectos */
+  position: relative; /* Para el efecto de neón */
+  overflow: hidden; /* Para esconder el efecto */
+}
+
+.keyboard button:disabled {
+  background-color: #555;
+  cursor: not-allowed;
+}
+
+.keyboard button:not(:disabled):hover {
+  background-color: #00adb5; /* Color al pasar el mouse */
+  box-shadow: 0 0 10px #00adb5, 0 0 20px #00adb5; /* Efecto de neón */
+}
+
+.keyboard button:not(:disabled):active {
+  transform: scale(0.95);
+}
+
+/* Mensaje de victoria o derrota */
+div p {
+  font-size: 1.2em;
+  font-weight: bold;
+  color: #fff;
+}
+
+/* Botón de reinicio */
+button {
+  padding: 10px 15px;
+  font-size: 1em;
+  color: #fff;
+  background-color: #ff4757; /* Color de fondo llamativo */
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  margin-top: 10px;
+  transition: background-color 0.3s, transform 0.2s; /* Transición para suavizar */
+}
+
+button:hover {
+  background-color: #ff6b81; /* Color al pasar el mouse */
+  transform: scale(1.05); /* Leve aumento al pasar el mouse */
+}

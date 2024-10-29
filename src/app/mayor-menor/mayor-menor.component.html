@@ -1,0 +1,23 @@
+<body>
+  <div class="game-container">
+    <h2>Juego de Mayor o Menor</h2>
+    <p>Puntaje: {{ score }}</p>
+
+    <div class="game-content">
+      <div class="deck-container">
+        <img src="https://deckofcardsapi.com/static/img/back.png" alt="Baraja de cartas" class="deck-image" />
+      </div>
+
+      <div class="current-card-container" *ngIf="currentCard">
+        <img [src]="currentCard.image" alt="Carta actual" class="current-card" />
+        <p>Carta actual: {{ currentCard.value }} de {{ currentCard.suit }}</p>
+        <p>{{ message }}</p>
+      </div>
+    </div>
+
+    <div class="buttons">
+      <button (click)="guessHigher()">Mayor</button>
+      <button (click)="guessLower()">Menor</button>
+    </div>
+  </div>
+</body>

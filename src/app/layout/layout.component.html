@@ -1,0 +1,36 @@
+<header class="header1">
+    <img src="https://firebasestorage.googleapis.com/v0/b/fbst-8c19a.appspot.com/o/consola-de-video.png?alt=media&token=871ca147-b04e-4338-882b-13da15d12530" alt="logo" height="100" width="100">
+ 
+    <h1>Bienvenido a la Sala de Juegos</h1>
+ 
+    <nav class="navbar">
+      <div class="navbar-container">
+        <ul class="nav-list">
+          <li><a [routerLink]="['/about']">Quien soy</a></li>
+          <li><a [routerLink]="['']">Juegos</a></li>
+          <li><a [routerLink]="['/chat']">Chat</a></li>
+          <li><a [routerLink]="['/listado']">Listado</a></li>
+          <li><a [routerLink]="['/encuesta']">Encuesta</a></li>
+          <li><a [routerLink]="['/resultadoEncuestas']">Resultados Encuesta</a></li>
+
+
+
+
+        </ul>
+        <ng-container *ngIf="isLoggedIn; else loggedOut">
+          <div class="navbar-user-info">
+            <span>Bienvenido, {{ userEmail }}!</span>
+            <a (click)="logout()" class="logout-btn">
+              <fa-icon [icon]="faSignOutAlt"></fa-icon>
+            </a>
+          </div>
+        </ng-container>
+        <ng-template #loggedOut>
+          <ul class="auth-list">
+            <li><a [routerLink]="['/login']">Login</a></li>
+            <li><a [routerLink]="['/registro']">Register</a></li>
+          </ul>
+        </ng-template>
+      </div>
+    </nav>
+ </header>

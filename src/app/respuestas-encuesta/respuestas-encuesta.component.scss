@@ -1,0 +1,65 @@
+$respuesta-bg: #1a1a1a; // Fondo oscuro
+$respuesta-border: #4e4e4e; // Color de borde gris
+$respuesta-neon-blue: #00f0ff; // Azul neón
+$respuesta-neon-purple: #a150f4; // Violeta neón
+
+.respuestas-container {
+  background-color: $respuesta-bg;
+  padding: 20px;
+  border-radius: 8px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+  
+  h3 {
+    color: $respuesta-neon-blue;
+    text-align: center;
+    margin-bottom: 20px;
+    text-shadow: 0 0 5px $respuesta-neon-purple, 0 0 10px $respuesta-neon-purple;
+  }
+
+  table {
+    width: 100%;
+    border-collapse: collapse;
+    color: #ffffff;
+    
+    thead {
+      background-color: $respuesta-neon-purple;
+      th {
+        padding: 12px;
+        text-align: left;
+        border-bottom: 2px solid $respuesta-border;
+        font-weight: bold;
+        color: #ffffff;
+      }
+    }
+
+    tbody {
+      tr {
+        &:nth-child(even) {
+          background-color: rgba(78, 78, 78, 0.5);
+        }
+        &:hover {
+          background-color: rgba(255, 255, 255, 0.1);
+          transition: background-color 0.3s ease;
+        }
+        td {
+          padding: 10px;
+          border-bottom: 1px solid $respuesta-border;
+
+          span {
+            background-color: $respuesta-neon-blue;
+            color: $respuesta-bg;
+            padding: 5px 10px;
+            border-radius: 5px;
+            margin-right: 5px;
+            display: inline-block;
+            transition: background-color 0.3s ease;
+
+            &:hover {
+              background-color: lighten($respuesta-neon-blue, 10%);
+            }
+          }
+        }
+      }
+    }
+  }
+}

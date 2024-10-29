@@ -1,0 +1,107 @@
+/* styles.scss */
+body {
+  background: linear-gradient(145deg, #1c1e3b, #282a48); /* Fondo degradado */
+  color: #e0e0ff;
+  font-family: Arial, sans-serif;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  min-height: 100vh;
+}
+
+.page-title {
+  color: #ffffff;
+  margin: 20px 0;
+  font-size: 2rem;
+  text-align: center;
+}
+
+.chat-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 100%;
+  max-width: 400px;
+  padding: 20px;
+  background: rgba(255, 255, 255, 0.05);
+  border-radius: 8px;
+  box-shadow: 0px 4px 15px rgba(0, 0, 0, 0.4);
+}
+
+.messages {
+  flex-grow: 1;
+  max-height: 400px;
+  overflow-y: auto;
+  padding: 10px;
+  margin-bottom: 15px;
+  border-radius: 10px;
+  background-color: #1c1e26;
+}
+
+.message-input {
+  display: flex;
+  align-items: center;
+  background-color: #1c1e26;
+  border-radius: 30px;
+  padding: 10px 20px;
+  box-shadow: 0px 0px 10px rgba(93, 82, 255, 0.7);
+  
+  input {
+    flex-grow: 1;
+    background-color: transparent;
+    border: none;
+    color: #e0e0ff;
+    outline: none;
+    padding: 5px 10px;
+    font-size: 16px;
+    
+    &::placeholder {
+      color: #b3b3d4;
+    }
+  }
+  
+  button {
+    background-color: #5d52ff;
+    border: none;
+    color: #fff;
+    font-size: 18px;
+    padding: 10px 15px;
+    margin-left: 10px;
+    border-radius: 20px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    
+    &:hover {
+      background-color: #7b75ff;
+      box-shadow: 0px 0px 10px rgba(123, 117, 255, 0.7);
+    }
+  }
+}
+
+.my-message {
+  background-color: #5d52ff;
+  color: #ffffff;
+  padding: 10px;
+  border-radius: 10px;
+  margin: 20px;
+  text-align: left;
+  box-shadow: 0px 0px 8px rgba(93, 82, 255, 0.6);
+}
+
+.other-message {
+  background-color: #44475a;
+  color: #ffffff;
+  padding: 10px;
+  border-radius: 10px;
+  margin: 20px;
+  text-align: left;
+  box-shadow: 0px 0px 8px rgba(68, 71, 90, 0.6);
+}
+
+.timestamp {
+  font-size: 0.8em;
+  color: #b3b3d4;
+  margin-left: 8px;
+}

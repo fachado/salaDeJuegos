@@ -1,0 +1,19 @@
+<div class="quiz-container">
+    <h2>¿A qué país pertenece esta bandera?</h2>
+    <p>Puntaje: {{ score }}</p>
+  
+    <div *ngIf="currentQuestion">
+      <img [src]="currentQuestion.flag" alt="Bandera" class="flag-image" />
+    </div>
+  
+    <div class="options">
+      <button *ngFor="let option of currentQuestion.options" (click)="play(option, $event)">
+        {{ option }}
+      </button>
+    </div>
+  
+    <div *ngIf="gameOver" class="game-over">
+      <h3>{{ gameOverText }}</h3>
+      <button (click)="restartGame()">Reiniciar Juego</button>
+    </div>
+  </div>
